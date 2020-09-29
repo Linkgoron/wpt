@@ -43,16 +43,16 @@
       let options = {dropElements: ["div"]};
       let s = new Sanitizer(options);
       assert_true(s instanceof Sanitizer);
-      assert_object_equals(s.creationOptions, {dropElements: ["DIV"]});
+      assert_object_equals(s.creationOptions, {dropElements: ["div"]});
 
       options.dropElements.push("test");
-      assert_object_equals(s.creationOptions, {dropElements: ["DIV"]});
+      assert_object_equals(s.creationOptions, {dropElements: ["div"]});
 
       s.creationOptions = {dropElements: ["test", "t"]};
-      assert_object_equals(s.creationOptions, {dropElements: ["DIV"]});
+      assert_object_equals(s.creationOptions, {dropElements: ["div"]});
 
       s.creationOptions['dropElements'] = [1,2,3];
-      assert_object_equals(s.creationOptions, {dropElements: ["DIV"]});
+      assert_object_equals(s.creationOptions, {dropElements: ["div"]});
     }, "SanitizerAPI config is not editable.");
 
     test(t => {
@@ -64,14 +64,12 @@
     test(t => {
       let s = new Sanitizer({dropElements: null});
       assert_true(s instanceof Sanitizer);
-      assert_true(s.creationOptions instanceof Object);
       assert_object_equals(s.creationOptions, default_option);
     }, "SanitizerAPI creator with config {dropElements: null}.")
 
     test(t => {
       let s = new Sanitizer({dropElements: undefined});
       assert_true(s instanceof Sanitizer);
-      assert_true(s.creationOptions instanceof Object);
       assert_object_equals(s.creationOptions, default_option);
     }, "SanitizerAPI creator with config {dropElements: undefined}.");
 
