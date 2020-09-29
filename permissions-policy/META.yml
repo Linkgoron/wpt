@@ -1,0 +1,4 @@
+spec: https://wicg.github.io/permissions-policy/
+suggested_reviewers:
+  - bakulf
+  - clelland
