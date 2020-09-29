@@ -528,9 +528,9 @@ policies and contribution forms [3].
 
         if (func) {
             var func_code = func.toString();
-            var arrow = func_code.match(/^\(\)\s*=>\s*/);
-            if (arrow !== null && /[\u000A\u000D\u2028\u2029]/.test(func_code))) {
-                return func_code.substring;
+            var arrow = func_code.match(/^\(\)\s*=>\s*(.*)$/);
+            if (arrow !== null && /[\u000A\u000D\u2028\u2029]/.test(func_code)) {
+                return func_code.arrow[0].groups[1];
             }
         }
 
